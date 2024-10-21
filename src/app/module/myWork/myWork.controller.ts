@@ -5,6 +5,7 @@ import catchAsync from "../../utils/catchAsync";
 import sendResponse from "../../utils/sendResponse";
 
 const createMyWork = catchAsync(async (req: Request, res: Response) => {
+  // console.log(req.body);
   const result = await myWorkServices.createMyWorkInToDB(req.body);
   sendResponse(res, {
     success: true,

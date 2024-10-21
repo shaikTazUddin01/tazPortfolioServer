@@ -10,7 +10,7 @@ const myWorkSchema = new Schema<IMyWork>({
   details: { type: String, required: true },
   livesiteClient: { type: String, required: true },
   livesiteServer: { type: String, required: true },
-  adminDashBoard: { type: String },
+  adminDashBoardLink: { type: String },
   gitClient: { type: String, required: true },
   gitServer: { type: String, required: true },
   feature: { type: [String], required: true },

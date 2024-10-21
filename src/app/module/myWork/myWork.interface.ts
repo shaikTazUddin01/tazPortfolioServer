@@ -6,7 +6,7 @@ export interface IMyWork  {
     details:string;
     livesiteClient: string;
     livesiteServer: string;
-    adminDashBoard?: string;
+    adminDashBoardLink?: string;
     gitClient: string;
     gitServer: string;
     feature: string[];
