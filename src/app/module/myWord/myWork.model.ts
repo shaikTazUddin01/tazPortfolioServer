@@ -4,7 +4,7 @@ import { IMyWork } from './myWork.interface';
 
 // Define the schema
 const myWorkSchema = new Schema<IMyWork>({
-  name: { type: String, required: true },
+  name: { type: String, required: true,unique:true },
   thumble: { type: String, required: true },
   image: { type: String, required: true },
   details: { type: String, required: true },
