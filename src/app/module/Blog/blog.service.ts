@@ -6,7 +6,19 @@ const createBlogInToDb=async(payload:IBlog)=>{
 
     return result
 }
+const getBlogFromDb=async()=>{
+    const result=await Blog.find()
+
+    return result
+}
+const getSpecificBlog=async(id:string)=>{
+    const result=await Blog.findById(id)
+
+    return result
+}
 
 export const blogService={
-    createBlogInToDb
+    createBlogInToDb,
+    getBlogFromDb,
+    getSpecificBlog
 }

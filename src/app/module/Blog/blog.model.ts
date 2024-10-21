@@ -2,7 +2,7 @@ import { model, Schema } from "mongoose";
 import { IBlog } from "./blog.inteface";
 
 const blogSchema=new Schema<IBlog>({
-    title: { type: String, required: true,unique:true },
+    title: { type: String, required: true },
     image: { type: String, required: true },
     details: { type: String, required: true },
 })

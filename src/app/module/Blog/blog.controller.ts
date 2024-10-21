@@ -13,7 +13,29 @@ const createBlog = catchAsync(async (req, res) => {
     data: result,
   });
 });
+const getBlog = catchAsync(async (req, res) => {
+  const result = await blogService.getBlogFromDb();
+
+  sendResponse(res, {
+    success:true,
+    statusCode: StatusCodes.OK,
+    message: "retrieve success",
+    data: result,
+  });
+});
+
+const getSpecificBlog = catchAsync(async (req, res) => {
+    const {id}=req.params
+  const result = await blogService.getSpecificBlog(id);
+  sendResponse(res, {
+    success:true,
+    statusCode: StatusCodes.OK,
+    message: "retrieve success",
+    data: result,
+  });
+});
 
 export const blogController={
-    createBlog
+    createBlog,
+    getBlog,getSpecificBlog
 }
