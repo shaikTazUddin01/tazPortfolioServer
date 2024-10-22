@@ -1,10 +1,15 @@
 import { model, Schema } from "mongoose";
 import { IBlog } from "./blog.inteface";
 
-const blogSchema=new Schema<IBlog>({
+
+const blogSchema = new Schema<IBlog>(
+  {
     title: { type: String, required: true },
     image: { type: String, required: true },
-    details: { type: String, required: true },
-})
+    description: { type: String, required: true },
+    tag: { type: String, required: true },
+  },
+  {timestamps: true }
+);
 
-export const Blog =model<IBlog>("Blog",blogSchema)
+export const Blog = model<IBlog>("Blog", blogSchema);
