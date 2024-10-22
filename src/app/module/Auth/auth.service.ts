@@ -17,8 +17,8 @@ const login = async (payload: IAuth) => {
   const userInfo = {
     userId: isUserExists?._id,
     userName: isUserExists?.name,
-    UserEmail: isUserExists?.email,
-    UserRole: isUserExists?.role,
+    userEmail: isUserExists?.email,
+    userRole: isUserExists?.role,
   };
   const accessToken = jwt.sign(userInfo, config.accessToken_Secret as string, {
     expiresIn: config.accessToken_Expiresin,
