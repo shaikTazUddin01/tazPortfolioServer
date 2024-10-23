@@ -15,7 +15,7 @@ const createMyWork = catchAsync(async (req: Request, res: Response) => {
   });
 });
 const getMyWork = catchAsync(async (req: Request, res: Response) => {
- console.log(req.headers.authorization)
+//  console.log(req.headers.authorization)
   const result = await myWorkServices.getMyAllWorkFromDB();
   sendResponse(res, {
     success: true,

@@ -14,8 +14,19 @@ const getSkillFromDb=async()=>{
 }
 
 
+const deleteSkillFromDB=async(id:string)=>{
+    const res=await Skill.deleteOne({_id:id})
+    return res
+}
+const updateSkillFromDB=async(id:string,payload:ISkill)=>{
+    const res=await Skill.updateOne({_id:id},payload,{new:true})
+    return res
+}
+
 export const skillService={
     createSkillInToDb,
     getSkillFromDb,
+    deleteSkillFromDB,
+    updateSkillFromDB
     
 }

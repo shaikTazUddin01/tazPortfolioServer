@@ -17,8 +17,20 @@ const getSpecificBlog=async(id:string)=>{
     return result
 }
 
+
+const deleteBlogFromDB=async(id:string)=>{
+    const res=await Blog.deleteOne({_id:id})
+    return res
+}
+const updateBlogFromDB=async(id:string,payload:IBlog)=>{
+    const res=await Blog.updateOne({_id:id},payload,{new:true})
+    return res
+}
+
 export const blogService={
     createBlogInToDb,
     getBlogFromDb,
-    getSpecificBlog
+    getSpecificBlog,
+    deleteBlogFromDB,
+    updateBlogFromDB
 }
